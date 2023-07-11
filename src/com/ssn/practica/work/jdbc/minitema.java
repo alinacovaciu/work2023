@@ -2,11 +2,10 @@ package com.ssn.practica.work.jdbc;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
-import java.sql.ResultSet;
+import java.sql.PreparedStatement;
 import java.sql.SQLException;
-import java.sql.Statement;
 
-public class JDBCExample {
+public class minitema {
 	public static void main(String[] args) throws ClassNotFoundException, SQLException {
 		Class.forName("oracle.jdbc.driver.OracleDriver");
 
@@ -16,20 +15,14 @@ public class JDBCExample {
 				System.out.println("Connection successful");
 			}
 
-			Statement statement = conn.createStatement();
-			ResultSet resultSet = statement.executeQuery("select * from vw_note_studenti");
+			PreparedStatement statement = conn.prepareStatement("insert into articol values (?, ?, ?)");
+			statement.setInt(1, 1);
+			statement.setString(2, "Andrei");
+			statement.setInt(3, 22);
 
-			while (resultSet.next()) {
-				System.out.println(//
-						resultSet.getString(1) + " " + //
-								resultSet.getInt(2) + " " + //
-								resultSet.getDouble(3) + " " + //
-								resultSet.getInt(4) //
-				);
-			}
-
-			resultSet.close();
+			statement.execute();
 		}
 
 	}
+
 }
