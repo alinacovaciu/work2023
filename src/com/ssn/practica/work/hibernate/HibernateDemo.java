@@ -1,4 +1,4 @@
-package hibernate;
+package com.ssn.practica.work.hibernate;
 
 import java.util.Date;
 import java.util.List;
