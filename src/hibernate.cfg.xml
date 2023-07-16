@@ -11,10 +11,18 @@
         
         <property name="dialect">org.hibernate.dialect.H2Dialect</property>
         <property name="show_sql">true</property>
-        <property name="hbm2ddl.auto">create</property>
+        <property name="hbm2ddl.auto">update</property>
         
-        <mapping class="com.ssn.practica.work.hibernate.Event"/>
-<mapping class="com.ssn.practica.work.hibernate.Trainee"/>
+        <!--mapping class="com.ssn.practica.work.hibernate.Event"/-->
+        <!--mapping class="com.ssn.practica.work.hibernate.Trainee"/-->
+        <!--mapping class="com.ssn.practica.work.hibernate.Course"/-->
+        <!--mapping class="com.ssn.practica.work.hibernate.Evaluation"/-->
+
+
+		<mapping class="minitema2.Article"/>
+        <mapping class="minitema2.Store"/>
+        <mapping class="minitema2.Price"/>
+
         <!-- mapping resource="com/ssn/databaseobjects.xml"/-->
 
     </session-factory>
